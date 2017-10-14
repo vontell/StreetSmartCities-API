@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, get_object_or_404
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.core import serializers
 import random, decimal, json
 
@@ -18,7 +18,7 @@ def delete_tasks(request):
     return JsonResponse({'success': True})
 
 def get_tasks(request):
-    return JsonResponse(serializers.serialize("json", Task.objects.all()), safe=False)
+    return HttpResponse(serializers.serialize("json", Task.objects.all()))
 
 def generate_tasks(request):
     titles = ['Clean street', 'Broken stop light', 'Garbage is everywhere', 'Solicitors are always here', 'Help with my garden', 'More parking spaces?', 'Stop sign is knocked down', 'IOT device is destroyed', 'Traffic busy in area today']
