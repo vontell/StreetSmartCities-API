@@ -77,13 +77,18 @@ WSGI_APPLICATION = 'TeamTownServer.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'teamtown',
+        'NAME': process.env. || 'teamtown',
         'USER': 'vontell',
         #'PASSWORD': 'mypassword',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
+
+import dj_database_url
+
+if process.env['DATABASE_URL']:
+    DATABASES['default'] = dj_database_url.parse(process.env['DATABASE_URL'], conn_max_age=600)
 
 
 # Password validation
