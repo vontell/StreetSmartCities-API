@@ -89,7 +89,7 @@ import dj_database_url
 import os
 
 if 'DATABASE_URL' in os.environ:
-    DATABASES['default'] = dj_database_url.parse(process.env['DATABASE_URL'], conn_max_age=600)
+    DATABASES['default'] = dj_database_url.parse(os.environ['DATABASE_URL'], conn_max_age=600)
 
 
 # Password validation
