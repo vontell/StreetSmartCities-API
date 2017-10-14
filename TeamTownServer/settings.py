@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'TeamTownServer.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': process.env. || 'teamtown',
+        'NAME': 'teamtown',
         'USER': 'vontell',
         #'PASSWORD': 'mypassword',
         'HOST': '127.0.0.1',
