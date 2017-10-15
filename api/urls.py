@@ -8,4 +8,6 @@ urlpatterns = [
     url(r'^tasks/generate/$', views.generate_tasks),
     url(r'^tasks/delete/$', views.delete_tasks),
     url(r'^tasks/$', views.get_tasks),
+    url(r'^data/generate/$', views.analyze_iot),
+    url(r'^data/$', views.get_data),
 ]

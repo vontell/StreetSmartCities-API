@@ -8,3 +8,4 @@ from api.models import *
 admin.site.register(User)
 admin.site.register(City)
 admin.site.register(Task)
+admin.site.register(Data)

@@ -16,6 +16,19 @@ class City(models.Model):
     name = models.CharField(max_length=300, primary_key=True)
     score = models.IntegerField(default=0)
     pub_date = models.DateTimeField('date published')
+    
+class Data(models.Model):
+    peds = models.IntegerField(default=39998)
+    cams = models.IntegerField(default=40)
+    mics = models.IntegerField(default=41)
+    temps = models.IntegerField(default=20)
+    
+    @classmethod
+    def create(cls, peds, cams, mics, temps):
+        data = cls(peds=peds, cams=cams, mics=mics, temps=temps)
+        data.save()
+        return data
+    
 
 class Task(models.Model):
     title = models.CharField(max_length=200)
