@@ -18,14 +18,15 @@ class City(models.Model):
     pub_date = models.DateTimeField('date published')
     
 class Data(models.Model):
+    analysis = models.CharField(max_length=254)
     peds = models.IntegerField(default=39998)
     cams = models.IntegerField(default=40)
     mics = models.IntegerField(default=41)
     temps = models.IntegerField(default=20)
     
     @classmethod
-    def create(cls, peds, cams, mics, temps):
-        data = cls(peds=peds, cams=cams, mics=mics, temps=temps)
+    def create(cls, peds, cams, mics, temps, analysis):
+        data = cls(peds=peds, cams=cams, mics=mics, temps=temps, analysis=analysis)
         data.save()
         return data
     
