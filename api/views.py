@@ -206,7 +206,8 @@ def analyze_iot(request):
 
     print(deviceCoverage)
     
-    Data.create(deviceCoverage["PEDEVT"], deviceCoverage["CAMERA"], deviceCoverage["MIC"], deviceCoverage["TEMPERATURE"], str(analysis))
+    Data.create(deviceCoverage["PEDEVT"], deviceCoverage["CAMERA"], deviceCoverage["MIC"], deviceCoverage["TEMPERATURE"])
+    Data.create(str(analysis))
     return JsonResponse({'success': True})
     
     

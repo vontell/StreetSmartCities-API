@@ -17,8 +17,16 @@ class City(models.Model):
     score = models.IntegerField(default=0)
     pub_date = models.DateTimeField('date published')
     
+class Analysis(models.Model) :
+    analysis = models.CharField(max_length=255)
+    
+    @classmethod
+    def create(cls, analysis):
+        data = cls(analysis=analysis)
+        data.save()
+        return data
+    
 class Data(models.Model):
-    analysis = models.CharField(max_length=254)
     peds = models.IntegerField(default=39998)
     cams = models.IntegerField(default=40)
     mics = models.IntegerField(default=41)
